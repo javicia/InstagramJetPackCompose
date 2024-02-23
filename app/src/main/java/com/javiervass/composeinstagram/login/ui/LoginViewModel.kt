@@ -1,4 +1,4 @@
-package com.javiervass.composeinstagram.login
+package com.javiervass.composeinstagram.login.ui
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
