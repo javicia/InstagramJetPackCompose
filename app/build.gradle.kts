@@ -63,6 +63,9 @@ dependencies {
     //Icon
     implementation("androidx.compose.material:material-icons-extended:1.6.2")
 
+    //LiveData
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.2")
+
     //Test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
