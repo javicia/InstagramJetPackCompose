@@ -1,16 +1,17 @@
 package com.javiervass.composeinstagram.login.data.network
 
-import com.javiervass.composeinstagram.core.network.RetrofitHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import retrofit2.Retrofit
+import javax.inject.Inject
 
-class LoginService {
+class LoginService @Inject constructor(private val loginClient: LoginClient) {
 
-    private val retofit = RetrofitHelper.getRetrofit()
+    //private val retofit = RetrofitHelper.getRetrofit()
 
     suspend fun doLogin(user:String, password: String): Boolean{
        return withContext(Dispatchers.IO){
-            val response = retofit.create(LoginClient::class.java).doLogin()
+            val response = loginClient.doLogin()
             response.body()?.success ?: false
         }
     }

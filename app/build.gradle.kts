@@ -1,6 +1,9 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -52,6 +55,7 @@ android {
 dependencies {
 
     val retrofit_version = "2.9.0"
+    val hilt_version = "2.41"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -69,10 +73,12 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:1.6.2")
 
     //Retrofit
-    //noinspection GradleDependency
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    //noinspection GradleDependency
     implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+
+    //Dagger Hilt
+    implementation ("com.google.dagger:hilt-android:2.48.1")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48.1")
 
     //Test
     testImplementation("junit:junit:4.13.2")

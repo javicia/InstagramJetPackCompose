@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_instagram_round"
         android:supportsRtl="true"
+        android:name=".ComposeInstagramApp"
         android:theme="@style/Theme.ComposeInstagram"
         tools:targetApi="31">
         <activity
